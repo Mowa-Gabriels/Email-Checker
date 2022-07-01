@@ -1,0 +1,71 @@
+
+
+{% extends 'base.html' %}
+
+{% block title %}
+        <title>List | Email Collector </title>
+{% endblock%}
+
+{% block content %}
+<div class="main-container">
+
+    
+    <section class="bg--secondary text-center">
+        <div class="container">
+            <div>
+                {% if messages %}
+                                         {% for message in messages %}
+        
+                                         <div {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                                            <strong>{{message}}</strong>
+        
+                                         </div>
+                                          {% endfor%}
+                                    {% endif %}
+                                        </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Email List</h1>
+                    
+                    
+                </div>
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </section>
+    <section class="bg--secondary">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    
+                </div>
+            </div>
+            <!--end of row-->
+            <div class="row">
+
+                {% for email_log in email_logs  %}
+                <div class="col-md-4">
+                    <a class="block" href="#">
+                        <div class="feature boxed boxed--border">
+                            
+                            <h5>{{ email_log.name}}</h5>
+                            <p>
+                                {{email_log.email}}
+                            </p>
+                            
+                        </div>
+                        <!--end feature-->
+                    </a>
+                </div>
+                {% endfor %}
+               
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </section>
+   
+
+</div>
+{% endblock %}

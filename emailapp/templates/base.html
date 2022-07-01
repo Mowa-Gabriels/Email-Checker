@@ -1,0 +1,111 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        {% block title %}
+        
+        {% endblock%}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Site Description Here">
+        <link href="{% static 'emailapp/css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{% static 'emailapp/css/stack-interface.css' %}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{% static 'emailapp/css/socicon.css' %}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{% static 'emailapp/css/lightbox.min.css' %}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{% static 'emailapp/css/flickity.css' %}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{% static 'emailapp/css/iconsmind.css' %}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{% static 'emailapp/css/jquery.steps.css' %}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{% static 'emailapp/css/theme.css' %}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{% static 'emailapp/css/custom.css' %}" rel="stylesheet" type="text/css" media="all" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMerriweather:300,300i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <style>
+            .dropdown__sec .dropdown__trigger {
+                cursor: pointer;
+                user-select: none;
+            }
+        </style>
+    </head>
+    <body class=" ">
+        <a id="start"></a>
+        <div class="nav-container ">
+            <div class="bar bar--sm visible-xs">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-3 col-md-2">
+                            <a href="{% url 'index' %}">
+                                <span>
+                                    <h3 style="font-weight: bold;margin:0;">MySiwie</h3>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="col-9 col-md-10 text-right">
+                            <a href="#" class="hamburger-toggle" data-toggle-class="#menu2;hidden-xs hidden-sm">
+                                <i class="icon icon--sm stack-interface stack-menu"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+            </div>
+            <!--end bar-->
+
+            <!-- make bar transaparent -->
+            <!-- bar--transparent bar--absolute -->
+
+            <nav id="menu2" class="bar bar-2 hidden-xs " data-scroll-class="90vh:pos-fixed">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2 text-center text-left-sm hidden-xs order-lg-2">
+                            <div class="bar__module">
+                                
+                            </div>
+                            <!--end module-->
+                        </div>
+                        <div class="col-lg-5 order-lg-1">
+                            <div class="bar__module">
+                                <ul class="menu-horizontal text-left">
+                                    <li class="dropdown__sec">
+                                        <a href="{% url 'index' %}">
+                                            <span>
+                                                <h3 style="font-weight: bold;margin:0;">Email Collector App</h3>
+                                            </span>
+                                        </a>
+                                    </li>
+                                   
+                                </ul>
+                            </div>
+                            <!--end module-->
+                        </div>
+                        <div class="col-lg-5 text-right text-left-xs text-left-sm order-lg-3">
+                            <div class="bar__module">
+                                <a class="btn btn--sm type--uppercase"  href="{% url 'email_list' %}">
+                                    <span class="btn__text">
+                                        Email List
+                                    </span>
+                                </a>
+                                <a class="btn btn--sm btn--primary type--uppercase" href="{% url 'add_email' %}">
+                                    <span class="btn__text">
+                                        Add New Email
+                                    </span>
+                                </a>
+                            </div>
+                            <!--end module-->
+                        </div>
+                    </div>
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+            </nav>
+            <!--end bar-->
+        </div>
+
+        {% block content %}
+        
+        {% endblock %}
+    </body>
+
+   
+</html>
